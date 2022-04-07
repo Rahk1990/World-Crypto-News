@@ -10,8 +10,8 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import WidgetDisplay from "./components/WidgetDisplay/WidgetDisplay"
-
+// import WidgetDisplay from "./components/WidgetDisplay/WidgetDisplay"
+import AssetList from "./components/AssetList/AssetList";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 
@@ -25,8 +25,9 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
-              <div className='container' dangerouslySetInnerHTML={{__html: <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>}}></div>
-              <WidgetDisplay />
+              {/* <div className='container' dangerouslySetInnerHTML={{__html: <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>}}></div> */}
+              {/* <WidgetDisplay /> */}
+              <AssetList />
             </PrivateRoute>
           }
         />
