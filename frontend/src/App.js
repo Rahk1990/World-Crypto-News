@@ -10,6 +10,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import { WatchListContextProvider } from "./context/watchList";
 // import WidgetDisplay from "./components/WidgetDisplay/WidgetDisplay"
 import AssetList from "./components/AssetList/AssetList";
 // Util Imports
@@ -27,7 +28,9 @@ function App() {
               <HomePage />
               {/* <div className='container' dangerouslySetInnerHTML={{__html: <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>}}></div> */}
               {/* <WidgetDisplay /> */}
+              <WatchListContextProvider>
               <AssetList />
+              </WatchListContextProvider>
             </PrivateRoute>
           }
         />

@@ -1,4 +1,4 @@
-from django import urls
+
 from django.db import models
 
 
