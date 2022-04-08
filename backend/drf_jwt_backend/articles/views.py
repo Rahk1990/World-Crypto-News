@@ -28,7 +28,7 @@ def articles_list(request):
 @api_view(['GET', 'PUT', 'DELETE'])
 def articles_detail(request, pk):
    
-    articles = get_object_or_404(articles, pk=pk)
+    articles = get_object_or_404(Articles, pk=pk)
     
     if request.method == 'GET':
             

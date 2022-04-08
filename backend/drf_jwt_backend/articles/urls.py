@@ -1,10 +1,11 @@
 from django.urls import path
-from .migrations import views
+from . import views
+
 
 
 urlpatterns = [
-    path('', views.article_list),
-    path('<int:pk>/', views.article_detail),
+    path('', views.articles_list),
+    path('<int:pk>/', views.articles_detail),
 ]
 # music/'
 # music/<int:pk>/ 
