@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 import { WatchListContextProvider } from "./context/watchList";
 // import WidgetDisplay from "./components/WidgetDisplay/WidgetDisplay"
 import AssetList from "./components/AssetList/AssetList";
+import ArticleList from "./components/ArticleList/ArticleList";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 
@@ -26,10 +27,10 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
-              {/* <div className='container' dangerouslySetInnerHTML={{__html: <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>}}></div> */}
-              {/* <WidgetDisplay /> */}
+
               <WatchListContextProvider>
               <AssetList />
+              <ArticleList />
               </WatchListContextProvider>
             </PrivateRoute>
           }
