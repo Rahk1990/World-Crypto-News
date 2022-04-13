@@ -11,6 +11,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import { WatchListContextProvider } from "./context/watchList";
+import { ArticlesListContextProvider } from "./components/Articles/ArticlesContext";
 // import WidgetDisplay from "./components/WidgetDisplay/WidgetDisplay"
 import AssetList from "./components/AssetList/AssetList";
 import ArticleList from "./components/ArticleList/ArticleList";
@@ -30,8 +31,11 @@ function App() {
 
               <WatchListContextProvider>
               <AssetList />
-              <ArticleList />
               </WatchListContextProvider>
+
+              <ArticlesListContextProvider>
+              <ArticleList />
+              </ArticlesListContextProvider>
             </PrivateRoute>
           }
         />
