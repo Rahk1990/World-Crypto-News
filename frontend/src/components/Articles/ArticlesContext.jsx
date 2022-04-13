@@ -1,25 +1,30 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 // import Asset from "../components/Asset/Asset";
+
+
 
 
 
 
 export const ArticlesListContext = createContext();
 
-// const articlesCatcher = ({key}) =>{
-// let articles = key.map(key = key.index)
-// console.log("New articles here!!",articles)
-// return articles;
-// };
+// function ArticleId({articleId}) {
+// return <h3><ArticleId />Article 1{articleId}</h3>;
+// }
+// let indexList = ArticleId();
+// console.log(indexList)
+// const ArticlesById = ({indexList}) => {
+//         const {id} = indexList
+// }
 
 
-
-export const ArticlesListContextProvider = props =>{
-    const [articlesList, setArticlesList] = useState ([0,1,2,3,4]) // Assets to be displayed 
-    
+export const ArticlesListContextProvider = (props) =>{
+    const [articlesList, setArticlesList] = useState ([]) // Assets to be displayed 
+   
     return (
         <ArticlesListContext.Provider value={{ articlesList }}>
             {props.children}
         </ArticlesListContext.Provider>
     );
 };
+export default ArticlesListContextProvider;

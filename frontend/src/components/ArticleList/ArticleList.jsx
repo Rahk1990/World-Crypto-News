@@ -1,9 +1,8 @@
 import axios from 'axios'
-// import { WatchListContext } from '../../context/watchList'
 import React, { useState, useEffect, useContext} from 'react';
 import { ArticlesListContext } from '../Articles/ArticlesContext';
 import ArticleDisplay from '../ArticleDisplay/ArticleDisplay'
-
+// import ArticlesContext from '../Articles/ArticlesContext'
 // import CoinGeeko from '../apis/CoinGeeko'
 
 // For setting the table to hold the tokens
@@ -12,76 +11,79 @@ import ArticleDisplay from '../ArticleDisplay/ArticleDisplay'
 const ArticleList = () => {
     
     const [article, setArticles] = useState ([]);
+    const [articlesId, setArticlesId] = useState ([]);
     const {articlesList} = useContext (ArticlesListContext);
     const [isLoading, setIsLoading] = useState(false);
-    
-    
-    
-    
-    
-    // const articleFilter = ({article}) => {
-    //     console.log(article)
-    //     let articleMatch = article.filter((article) => {
-    //       if(article.name.toLowerCase().includes(article.toLowerCase())){
-    //         return true
-            
-    //       }
-    //       else return false
-    //     }
-    //     )
-    //     console.log(articleMatch)
-    //   };
 
+    
+    
     useEffect(() => {
-        const fetchArticleData = async () => {
-               setIsLoading(true)
-            
-            const response = await axios.get("https://techcrunch.com/wp-json/wp/v2/posts?per_page=10&context=embed", {
-                params: {
-                    ids: articlesList.join(","),
-                    totalResults: 10,
-                },
-            });
-             
-            console.log("Data from News API AS RESPONSE data",response.data); // All article Returned here!
-            setArticles(response.data);
-            console.log("Data from News API request");
-            setIsLoading(false);
-        };
+      const fetchArticleData = async () => {
+        setIsLoading(true)
+        
+        const response = await axios.get("https://techcrunch.com/wp-json/wp/v2/posts?per_page=10&context=embed", {
+          params: {
+            ids: articlesList.join(","),
+            totalResults: 10,
+          },
+        });
+        
+        console.log("Data from News API AS RESPONSE data",response.data); // All article Returned here!
+        console.log("Data from News API request");
+        setIsLoading(false);
+        setArticles(response.data);
+        
+        // const getArticleByIndex = () => {
+
+          let indexList = response.data.map(article => article.id)
+          console.log("index list here!!!!", indexList)
+          setArticlesId(indexList)
+          console.log("AS ARTICLES", articlesId)
+          // return(<h5><ArticlesContext articlesId={articlesId} /></h5>);
+
+      // };
+      }; 
         
         fetchArticleData();
         
         // ArticleDisplay();
          },[]);
 
-    
-    const renderArticles = () => {
-      
-        if(isLoading) {
-          return <div>Loading...</div>;
-        }
-        
-        return (
-          <ul className="articlelist list-group mt-2">
-  
-            {article.map(article => {
+         const renderArticles = () => {
+           
+             if(isLoading) {
+               return <div>Loading...</div>;
+             }
+             
+             return (
+               <ul className="articlelist list-group mt-2">
        
-              return <ArticleDisplay key={article.index} article={article.link} />;
-            })}
-            </ul>
+                 {article.map((article) => {
             
-          );
-
-        };
-          
-       
-        
-        console.log("Article LIST HERE!!!!2", articlesList)
+                   return <ArticleDisplay key={article.id} index={article.index} article={article.link} />;
+                 })}
+                 </ul>
+                 
+               );
+     
+             };
+               
+            
+             
+             console.log("Article LIST HERE!!!!2", articlesList)
+         
     
     
     return(
 
-    <div>{renderArticles()}
+    <div>
+      <h2>Articles</h2>
+      <h4>
+      {renderArticles()}
+      {/* {articlesList} */}
+      {/* <ArticlesContext articleId={articleId} /> */}
+      </h4>
+      {/* {getArticleByIndex()} */}
   
     </div>
     );
