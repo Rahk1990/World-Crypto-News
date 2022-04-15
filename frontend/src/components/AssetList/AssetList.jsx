@@ -54,7 +54,9 @@ const AssetList = () => {
       };
       
       console.log("WATCH LIST HERE!!!!2", watchList)
+      
     return <div>{renderAssets()}</div>
+
     };
 
 export default AssetList
