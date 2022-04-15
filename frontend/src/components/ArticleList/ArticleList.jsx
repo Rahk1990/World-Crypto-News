@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect} from 'react';
+import SaveArticles from '../SaveArticles/SaveArticles';
 // import ArticlesContext from '../Articles/ArticlesContext'
 // import CoinGeeko from '../apis/CoinGeeko'
 
@@ -7,8 +8,8 @@ import React, { useState, useEffect} from 'react';
 
 // id:null, symbol:null, name:" ", block_time_in_minutes:" ", image:" ", market_data:" ", last_updated:" ", localization:""
 const ArticleList = (props) => {
-    
-    const [article, setArticles] = useState ([]);
+  
+  const [article, setArticles] = useState ([]);
     // const [searchables, setSearchables] = useState([])
     // const [apiArticle, setApiArticle] = useState([])
 
@@ -22,8 +23,13 @@ const ArticleList = (props) => {
       props.apiArticleFetch(article);
     }
     
+    function saveArticle(){
+      props.SaveArticles(article)
+    }
 
-
+    // const getComment = () =>{
+      
+    // }
     
     useEffect(() => {
       const fetchArticleData = async () => {
@@ -51,26 +57,26 @@ const ArticleList = (props) => {
         fetchArticleData();
         
         // ArticleDisplay();
-         },[]);
+      },[]);
+      apiArticles();
 
-         apiArticles();
     return(
 
     <div>
       <h2>Articles</h2>
       <h4>
-      {/* {renderArticles()} */}
+
       {article.map((article) => {
        
-        // article.apiArticleFetch(apiArticle);
         return <div >
           <br/>
          
 
-            <div ><h3>{article.slug}</h3></div>
+            <div><h3>{article.parsely.meta.headline}</h3></div>
             <img src={article.parsely.meta.image.url} alt="" />
             <div>{article.canonical_url}</div>
             <div>{article.excerpt.rendered}</div>
+            <SaveArticles article={saveArticle} />    
             </div>
       })}
 

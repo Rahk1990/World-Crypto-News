@@ -31,44 +31,22 @@ function App() {
   const [apiArticles, setApiArticles] = useState([])
 
 
-
+//COMES FROM ARTICLE API
   const apiArticleFetch =(apiArticles) =>{
-setApiArticles(apiArticles)
-console.log("MAde it As searchable Article",apiArticles) 
+  setApiArticles(apiArticles)
+  console.log("MAde it As searchable Article",apiArticles) 
   }
   
 
-
+//SEARCH ENTRIES FROM SEARCH BAR
   const searchArticles = (searchEntries) => {
   setSearchEntries(searchEntries)
-  console.log("MADE IT TO APP PAGE!",searchEntries)
+  console.log("MADE IT TO APP PAGE SEARCH ENTIRES!",searchEntries)
   }
   
-  //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
-  const apiSearches = (searchableEntries) => {
-    setSearchableEntries(searchableEntries)
-    // searchEntries.filter((article) => {
-    //   if(article.name.toLowerCase().includes(searchEntries.toLowerCase()) === {...apiArticles} ){
-    //     console.log(searchableEntries)
-    //     return(
-          
-    //       <div></div>
-    //       // <div ><h3>{article.slug}</h3></div>,
-    //       // <img src={article.parsely.meta.image.url} alt="" />,
-    //       // <div>{article.canonical_url}</div>,
-    //       // <div>{article.excerpt.rendered}</div>
-          
-    //       );          
-          
-          
-    //     }
-    //     else return false (<h4>No Articles</h4>);
-    //   }
-    //   )
-      
-      // console.log(searches,"I AM NOW SEARCHES!")
-      // setSearchEntries(searches)
-    // };
+//HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
+  const apiSearches = (searchableEntries, apiArticles) => {
+    setSearchableEntries(searchableEntries, apiArticles)
   } 
  
   
@@ -85,9 +63,9 @@ console.log("MAde it As searchable Article",apiArticles)
               <WatchListContextProvider>
               <AssetList />
               </WatchListContextProvider>
-              <SearchBar searchArticles={searchArticles} />
               <ArticleList apiArticleFetch={apiArticleFetch} />
-              <ApiSearcher  searchableEntries={apiSearches}  />
+              <SearchBar searchArticles={searchArticles} />
+              {/* <ApiSearcher  searchableEntries={apiSearches} apiArticles={apiSearches}   /> */}
 
           
        

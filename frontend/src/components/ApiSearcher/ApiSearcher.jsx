@@ -6,7 +6,7 @@ function ApiSeacher ({searchableEntries, apiArticles}){
   const [searches, setSearches] = useState([])
   const [articles, setArticles] = useState([])
 
-  let search = searchableEntries.map(el => el.text)
+  let search = searchableEntries.map(el => el)
   setSearches(search)
   console.log(searches)
 
@@ -15,19 +15,18 @@ function ApiSeacher ({searchableEntries, apiArticles}){
   console.log(articles)
   
   
-  searchableEntries.filter((searches,article) => {
+ searchableEntries.filter((searches,article) => {
       if(searches.name.toLowerCase().includes(searches.toLowerCase()) === apiArticles.name.toLowerCase().includes(articles.toLowerCase())){
           
       return(
         
         <div ><h3>{article.slug}</h3></div>,
-        <img src={article.parsely.meta.image.url} alt="" />,
-        <div>{article.canonical_url}</div>,
-        <div>{article.excerpt.rendered}</div>
+        // <img src={article.parsely.meta.image.url} alt="" />
+        <div>{searches}</div>
        
       );          
-      // else return false (<h4>No Articles</h4>);
     }
+    else return false (<h4>No Articles</h4>);
     
 });
 }
