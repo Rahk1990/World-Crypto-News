@@ -74,12 +74,14 @@ const ArticleList = (props) => {
           <br/>
 
             <div className='box-1'>
-            <img className='image'  src={article.parsely.meta.image.url} alt="" />
-
+            <img className='image'  src={article.parsely.meta.image.url} alt={article.parsely.meta.publisher.logo.url} />
+            <div className="pagination">
+            
             <div>Title:<h3>{article.parsely.meta.headline}</h3></div>
             <div>URL:<h3>{article.canonical_url}</h3></div>
             <div>Summary:<h3>{article.excerpt.rendered}</h3></div>
             <SaveArticles article={saveArticle} />    
+            </div>
             </div>
             </div>
       })}

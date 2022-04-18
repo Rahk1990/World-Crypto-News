@@ -1,53 +1,47 @@
 import React from 'react';
 
-const RelatedArticles = (props) => {
+
+const RelatedArticles = ({searchingEntries}) => {
+
+    
+// const [title, author, urls, comment] = searchingEntries;
+
 
     // let article = {
 
-    //     title: title,
-    //     author: author,
-    //     urls: urls,
-    //     comment:comment
+    //     title: searchingEntries.title,
+    //     author: searchingEntries.author,
+    //     urls: searchingEntries.urls,
+    //     comment:searchingEntries.comment
 
     // }
-        
+
 
     return(
-        
-        
-        <table>
-    <div>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>URL</th>
-                <th>Author</th>
-                <th>Comment</th>
-                <th>Image</th>
-            </tr>
-        </thead>
 
-    </div>
-    <div>
-        <tbody>
-            {props.searchEntries.map((article, index) => {
+        <div>
+        <h2>Relative Articles</h2>
+
+            {searchingEntries.map((article) => {
                 return(
-                    <div>
-                        <tr>
-                        <td>{index + 1 }</td>
-                        <td>{article.title}</td>
-                        <td>{article.author}</td>
-                        <td>{article.urls}</td>
-                        <td>{article.comment}</td>
+                    <div className='box-1'>
+                        
+                        {/* <td>{article.index }</td> */}
+                        <h3>{article.id}</h3>
+                        <h3>{article.title}</h3>
+                        <h3>{article.author}</h3>
+                        <h3>{article.urls}</h3>
+                        <h3>{article.comment}</h3>
+                    
 
-                        </tr>
+     
                     </div>
                     );
                 })}
 
-        </tbody>
+
     </div>
-    </table> 
+
     );
 
 }

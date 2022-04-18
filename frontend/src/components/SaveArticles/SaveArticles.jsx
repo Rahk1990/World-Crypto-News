@@ -29,6 +29,8 @@ const SaveArticles = (props) => {
     props.fetchArticleData();
     console.log(comment)
 }
+function goodDay(goodEvent){ var goodEvent = goodEvent.bubbles}
+function badDay(goodEvent){ var goodEvent = goodEvent.bubbles}
 
     return ( 
         <div className='container-1'>
@@ -47,11 +49,14 @@ const SaveArticles = (props) => {
             <tr><label>URL of Article</label></tr>
             <input type="text" value={`${urls}`} onChange={(event) => setUrls(event.target.value)} placeholder={"Urls Here"}/>
     
-            
-            <tr className='paragraph'><label>Comment</label></tr>
-            <input type="text"  onChange={(event) => setComment(event.target.value)} />
+            <div >
+            <tr ><label>Comment</label></tr>
+            <input className='paragraph' type="text"  onChange={(event) => setComment(event.target.value)} />
             <button type='submit'>Save Article</button>
-            
+
+            </div>
+            <button onClick={goodDay}>Good</button>
+            <button onClick={badDay}>Bad</button>
         </form>
         </div>
      );

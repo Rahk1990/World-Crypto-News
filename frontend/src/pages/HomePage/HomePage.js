@@ -27,7 +27,7 @@ const HomePage = () => {
   }, [token]);
   return (
     <div className="container">
-      <h1>New Asset Page {user.username}!</h1>
+      <h1>News and Asset Page {user.username}!</h1>
       {cars &&
         cars.map((car) => (
           <p key={car.id}>

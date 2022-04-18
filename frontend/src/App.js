@@ -40,15 +40,22 @@ function App() {
   
 
 //SEARCH ENTRIES FROM SEARCH BAR
-  const searchArticles = (searchEntries) => {
+  const searchArticles = (searchEntries) =>{
   setSearchEntries(searchEntries)
   console.log("MADE IT TO APP PAGE SEARCH ENTIRES!",searchEntries)
   }
   
+
 //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
-  const apiSearches = (searchableEntries, apiArticles) => {
-    setSearchableEntries(searchableEntries, apiArticles)
-  } 
+  
+
+// const searchingEntries = (searchableEntries) => {
+//   setSearchableEntries(searchableEntries)
+//   } 
+ 
+// const apiSearches = (searchableEntries, apiArticles) => {
+//   setSearchableEntries(searchableEntries, apiArticles)
+//   } 
  
   
   console.log(searchEntries)
@@ -61,12 +68,14 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
-              <SearchBar searchArticles={searchArticles} />
               <WatchListContextProvider>
               <AssetList />
               </WatchListContextProvider>
-              <ArticleList apiArticleFetch={apiArticleFetch} />
-              <RelatedArticles searchEntries={searchEntries} />
+              <SearchBar searchArticles={searchArticles} />
+              <RelatedArticles searchingEntries={searchEntries} />
+      
+               <ArticleList apiArticleFetch={apiArticleFetch} />
+        
               {/* <ApiSearcher  searchableEntries={apiSearches} apiArticles={apiSearches}   /> */}
 
           
