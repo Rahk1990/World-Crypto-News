@@ -5,45 +5,55 @@ import React, { useState } from 'react';
 
 const SaveArticles = (props) => {
 
-    const [author, setAuthor] = useState('');
-    const [title, setTitle] = useState('');
-    const [urls, setUrls] = useState('');
-    const [comment, setComment] = useState('');
+    const [author, setAuthor] = useState(' ');
+    const [title, setTitle] = useState(' ');
+    const [urls, setUrls] = useState(' ');
+    const [comment, setComment] = useState(' ');
 
 
     async function handleSubmit(event){
+        alert("Article Saved")
     event.preventDefault(event);
 
+    
     let newEntry = {
-        title:"new title",
-        // title:props.parsely.meta.headline,
-        author:"John",
-        // author:props.parsely.meta.author.name,
-        urls:"www.samples.com",
-        // urls:urls,
-        comment:" ",
+        title:title,
+        // title:props.parsely.meta.headline, TO PULL AUTO
+        author:author,
+        // author:props.parsely.meta.author.name, TO PULL AUTO
+        urls:urls,
+        // urls:urls, TO PULL AUTO
+        comment:comment,
     }
-    await axios.post("127.0.0.1:8000/api/articles/", newEntry)
+    await axios.post("http://127.0.0.1:8000/api/articles/", newEntry)
     props.fetchArticleData();
     console.log(comment)
 }
 
     return ( 
-
-        <form onSubmit={handleSubmit}>
+        <div className='container-1'>
             
-            <input value={`Title Saved! ${title}`} onChange={(event) => setTitle(event.target.value)} placeholder={"Saving Title"}/>
+        <form className='box-2' onSubmit={handleSubmit}>
+            
+
+            <tr><label>Title</label></tr>
+            <input type="text" value={`${title}`} onChange={(event) => setTitle(event.target.value)} placeholder={"Title Here"}/>
 
             
-            <input value={`${author}`} onChange={(event) => setAuthor(event.target.value)} placeholder={"Saving Author"} />
+            <tr><label>Author</label></tr>
+            <input type="text" value={`${author}`} onChange={(event) => setAuthor(event.target.value)} placeholder={"Author Here"} />
       
             
-            <input  value={`${urls}`} onChange={(event) => setUrls(event.target.value)} placeholder={"Saving Urls"}/>
+            <tr><label>URL of Article</label></tr>
+            <input type="text" value={`${urls}`} onChange={(event) => setUrls(event.target.value)} placeholder={"Urls Here"}/>
     
-            <tr><label>Comment</label></tr>
-            <input type={null}  onChange={(event) => setComment(event.target.value)} />
+            
+            <tr className='paragraph'><label>Comment</label></tr>
+            <input type="text"  onChange={(event) => setComment(event.target.value)} />
             <button type='submit'>Save Article</button>
+            
         </form>
+        </div>
      );
 }
  

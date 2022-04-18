@@ -18,6 +18,7 @@ import ApiSearcher from "./components/ApiSearcher/ApiSearcher";
 import PrivateRoute from "./utils/PrivateRoute";
 import SearchBar from "./components/SearchBar/SearchBar";
 import AssetList from "./components/AssetList/AssetList";
+import RelatedArticles from "./components/RelatedArticles/RaletedArticles";
 
 
 
@@ -60,11 +61,12 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
+              <SearchBar searchArticles={searchArticles} />
               <WatchListContextProvider>
               <AssetList />
               </WatchListContextProvider>
               <ArticleList apiArticleFetch={apiArticleFetch} />
-              <SearchBar searchArticles={searchArticles} />
+              <RelatedArticles searchEntries={searchEntries} />
               {/* <ApiSearcher  searchableEntries={apiSearches} apiArticles={apiSearches}   /> */}
 
           

@@ -68,15 +68,19 @@ const ArticleList = (props) => {
 
       {article.map((article) => {
        
-        return <div >
+        return <div className='container-1' >
+          
+          
           <br/>
-         
 
-            <div><h3>{article.parsely.meta.headline}</h3></div>
-            <img src={article.parsely.meta.image.url} alt="" />
-            <div>{article.canonical_url}</div>
-            <div>{article.excerpt.rendered}</div>
+            <div className='box-1'>
+            <img className='image'  src={article.parsely.meta.image.url} alt="" />
+
+            <div>Title:<h3>{article.parsely.meta.headline}</h3></div>
+            <div>URL:<h3>{article.canonical_url}</h3></div>
+            <div>Summary:<h3>{article.excerpt.rendered}</h3></div>
             <SaveArticles article={saveArticle} />    
+            </div>
             </div>
       })}
 
