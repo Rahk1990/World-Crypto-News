@@ -23,6 +23,8 @@ const RelatedArticles = ({searchingEntries}) => {
         <h2>Relative Articles</h2>
 
             {searchingEntries.map((article) => {
+
+
                 return(
                     <div className='box-1'>
                         
@@ -32,6 +34,8 @@ const RelatedArticles = ({searchingEntries}) => {
                         <h3>{article.author}</h3>
                         <h3>{article.urls}</h3>
                         <h3>{article.comment}</h3>
+                        <h3>{article.good}</h3>
+                        
                     
 
      

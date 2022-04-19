@@ -13,12 +13,13 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import { WatchListContextProvider } from "./context/watchList";
 import ArticleList from "./components/ArticleList/ArticleList";
-import ApiSearcher from "./components/ApiSearcher/ApiSearcher";
+// import ApiSearcher from "./components/ApiSearcher/ApiSearcher";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import SearchBar from "./components/SearchBar/SearchBar";
 import AssetList from "./components/AssetList/AssetList";
 import RelatedArticles from "./components/RelatedArticles/RaletedArticles";
+import RelatedCharts from "./components/RelatedCharts/RaletedCharts";
 
 
 
@@ -28,7 +29,7 @@ import RelatedArticles from "./components/RelatedArticles/RaletedArticles";
 function App() {
   
   const [searchEntries, setSearchEntries] = useState([]);
-  const [searchableEntries, setSearchableEntries] = useState([]);
+  const [chartedEntries, setChartedEntries] = useState([]);
   const [apiArticles, setApiArticles] = useState([])
 
 
@@ -45,7 +46,10 @@ function App() {
   console.log("MADE IT TO APP PAGE SEARCH ENTIRES!",searchEntries)
   }
   
-
+  const chartEntries = (chartedEntries) =>{
+  setChartedEntries(chartedEntries)
+  console.log("Charts",chartedEntries)
+  }
 //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
   
 
@@ -72,9 +76,10 @@ function App() {
               <AssetList />
               </WatchListContextProvider>
               <SearchBar searchArticles={searchArticles} />
+              <RelatedCharts chartedEntries={chartedEntries}/>
               <RelatedArticles searchingEntries={searchEntries} />
-      
                <ArticleList apiArticleFetch={apiArticleFetch} />
+      
         
               {/* <ApiSearcher  searchableEntries={apiSearches} apiArticles={apiSearches}   /> */}
 

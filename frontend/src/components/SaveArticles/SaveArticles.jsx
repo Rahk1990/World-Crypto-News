@@ -29,8 +29,8 @@ const SaveArticles = (props) => {
     props.fetchArticleData();
     console.log(comment)
 }
-function goodDay(goodEvent){ var goodEvent = goodEvent.bubbles}
-function badDay(goodEvent){ var goodEvent = goodEvent.bubbles}
+function goodDay(){ var goodEvent = goodEvent.bubbles}
+function badDay(){ var badEvent = badEvent.bubbles}
 
     return ( 
         <div className='container-1'>
@@ -52,11 +52,13 @@ function badDay(goodEvent){ var goodEvent = goodEvent.bubbles}
             <div >
             <tr ><label>Comment</label></tr>
             <input className='paragraph' type="text"  onChange={(event) => setComment(event.target.value)} />
-            <button type='submit'>Save Article</button>
 
-            </div>
+                    </div>
+            <div>
+                Save Article as "Good" or "Bad" for investments?
             <button onClick={goodDay}>Good</button>
             <button onClick={badDay}>Bad</button>
+                </div>
         </form>
         </div>
      );
