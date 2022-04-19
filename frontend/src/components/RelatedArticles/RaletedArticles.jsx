@@ -26,7 +26,7 @@ const RelatedArticles = ({searchingEntries}) => {
 
 
                 return(
-                    <div className='box-1'>
+                    <div className='box-1'key={article.id}>
                         
                         {/* <td>{article.index }</td> */}
                         <h3>{article.id}</h3>

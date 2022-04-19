@@ -13,6 +13,8 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import { WatchListContextProvider } from "./context/watchList";
 import ArticleList from "./components/ArticleList/ArticleList";
+import SaveArticles from "./components/SaveArticles/SaveArticles"
+
 // import ApiSearcher from "./components/ApiSearcher/ApiSearcher";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -39,17 +41,21 @@ function App() {
   console.log("MAde it As searchable Article",apiArticles) 
   }
   
+  // function saveArticle(searchEntries){
+
+  // }
 
 //SEARCH ENTRIES FROM SEARCH BAR
   const searchArticles = (searchEntries) =>{
   setSearchEntries(searchEntries)
+  setChartedEntries(searchEntries)
   console.log("MADE IT TO APP PAGE SEARCH ENTIRES!",searchEntries)
   }
   
-  const chartEntries = (chartedEntries) =>{
-  setChartedEntries(chartedEntries)
-  console.log("Charts",chartedEntries)
-  }
+  // const chartsEntries = (chartedEntries) =>{
+  // setChartedEntries(searchEntries)
+  // console.log("Charts",chartedEntries)
+  // }
 //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
   
 
@@ -62,7 +68,7 @@ function App() {
 //   } 
  
   
-  console.log(searchEntries)
+
   return (
     <div>
       <Navbar />
@@ -75,10 +81,13 @@ function App() {
               <WatchListContextProvider>
               <AssetList />
               </WatchListContextProvider>
+              <div>
               <SearchBar searchArticles={searchArticles} />
+              <RelatedArticles searchingEntries={searchEntries} /><SaveArticles article={searchEntries} />   
               <RelatedCharts chartedEntries={chartedEntries}/>
-              <RelatedArticles searchingEntries={searchEntries} />
-               <ArticleList apiArticleFetch={apiArticleFetch} />
+              </div>
+              <ArticleList apiArticleFetch={apiArticleFetch} />
+
       
         
               {/* <ApiSearcher  searchableEntries={apiSearches} apiArticles={apiSearches}   /> */}

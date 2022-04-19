@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 
-const RelatedCharts = ({chartedEntries}) =>{
+const RelatedCharts = ({chartedEntries}) => {
     
     // const [goodCounts, setGoodCounts] = useState([])
     // console.log(chartedEntries.author)
-    useEffect(() => {
+    // useEffect(() => {
     
-    function DisplayDayChart(){
+    // function DisplayDayChart(){
         
-        console.log(chartedEntries)
+    //     console.log(chartedEntries)
         
     //     async function goodDayCount(){chartedEntries.filter(entries => entries.good)};
     //     setGoodCounts(response.data)
@@ -23,22 +23,21 @@ const RelatedCharts = ({chartedEntries}) =>{
     //     // let badCount = badDayCount.map(entries => entries.bad).count();
     //     // console.log("BAD!",badCount)
     
-}
+// }
 
-DisplayDayChart();
 // DisplayDayChart();
-}, []);
+// DisplayDayChart();
+// }, []);
 
     return(
 
         <div>
         <h2>Relative Articles</h2>
-        {/* <DisplayDayChart /> */}
             {chartedEntries.map((article) => {
-
+                console.log("CHARTPAGE",article)
 
                 return(
-                    <div className='box-1'>
+                    <div className='box-1'key={article.index}>
                         
                         {/* <td>{article.index }</td> */}
                         <h3>{article.id}</h3>
@@ -47,10 +46,7 @@ DisplayDayChart();
                         <h3>{article.author}</h3>
                         <h3>{article.urls}</h3>
                         <h3>{article.comment}</h3> */}
-                        
-                    
 
-     
                     </div>
                     );
                 })}
