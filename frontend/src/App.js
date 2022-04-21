@@ -83,9 +83,9 @@ function App() {
               </WatchListContextProvider>
               <div>
               <SearchBar searchArticles={searchArticles} />
-              <RelatedCharts chartedEntries={searchEntries}/>
               <RelatedArticles searchingEntries={searchEntries} />
               <SaveArticles article={searchEntries} />   
+              <RelatedCharts chartedEntries={searchEntries}/>
               </div>
               <ArticleList apiArticleFetch={apiArticleFetch} />
 
