@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Chart } from "react-google-charts";
 // import axios from 'axios';
 const RelatedCharts = ({chartedEntries}) => {
 
@@ -44,18 +45,36 @@ const RelatedCharts = ({chartedEntries}) => {
                 badDayCount();
             }, []);
             
+            const data = [
+                ["Investment Bias", "Articles Saved"],
+                ["Good Investment Days", goodCounts],
+                ["Bad Investment Days", badCounts],
+
+              ]; 
             
-            
+
+              const options = {
+                title: "My Daily Invesment Bias",
+              };
+
+              
             return(
                 <div className='box-1'key={chartedEntries.index}>
+
+
+            <Chart
+                chartType="PieChart"
+                data={data}
+                options={options}
+                width={"100%"}
+                height={"400px"}
+                />
         <form onSubmit={handleSubmit} >
         <button >Count</button>
         </form>
 
 
-        <h3>{`Good Counts are${goodCounts}`}</h3>
-        <h3>{chartedEntries.id}</h3>
-        <h3>{chartedEntries.good}</h3>
+   
 
 
     </div>
