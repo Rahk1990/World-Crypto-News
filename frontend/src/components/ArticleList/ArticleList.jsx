@@ -70,7 +70,7 @@ const ArticleList = (props) => {
           
           <br/>
 
-            <div className='box-1'key={article.index}>
+            <div className='box-1'>
             <img className='image'  src={article.parsely.meta.image.url} alt={article.parsely.meta.publisher.logo.url} />
             <div className="pagination">
             

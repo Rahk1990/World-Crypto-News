@@ -41,14 +41,14 @@ function App() {
   console.log("MAde it As searchable Article",apiArticles) 
   }
   
-  // function saveArticle(searchEntries){
-
-  // }
+  const chartEntries = (chartedEntries) =>{
+    setChartedEntries(searchEntries)
+    console.log(chartedEntries)
+  }
 
 //SEARCH ENTRIES FROM SEARCH BAR
   const searchArticles = (searchEntries) =>{
   setSearchEntries(searchEntries)
-  setChartedEntries(searchEntries)
   console.log("MADE IT TO APP PAGE SEARCH ENTIRES!",searchEntries)
   }
   
@@ -83,8 +83,9 @@ function App() {
               </WatchListContextProvider>
               <div>
               <SearchBar searchArticles={searchArticles} />
-              <RelatedArticles searchingEntries={searchEntries} /><SaveArticles article={searchEntries} />   
-              <RelatedCharts chartedEntries={chartedEntries}/>
+              <RelatedCharts chartedEntries={searchEntries}/>
+              <RelatedArticles searchingEntries={searchEntries} />
+              <SaveArticles article={searchEntries} />   
               </div>
               <ArticleList apiArticleFetch={apiArticleFetch} />
 
