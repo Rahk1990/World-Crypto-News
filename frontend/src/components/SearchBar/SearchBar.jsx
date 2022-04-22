@@ -35,11 +35,11 @@ const SearchBar = (props) => {
 
 
     return (
-        <div>
+        <div >
             <form onSubmit={handleSubmit}>
-                <input value={searchEntries} onChange={(e) => setSearchEntries(e.target.value)} type='text' placeholder='Search...'></input>
+                {/* <input value={searchEntries} onChange={(e) => setSearchEntries(e.target.value)} type='text' placeholder='Search...'></input> */}
 
-                <button type='submit'>Related</button>
+                <button type='submit'>Get Related </button>
             </form>
 
 

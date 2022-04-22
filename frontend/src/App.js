@@ -1,7 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -29,45 +29,45 @@ import RelatedCharts from "./components/RelatedCharts/RaletedCharts";
 
 
 function App() {
-  
+
   const [searchEntries, setSearchEntries] = useState([]);
   const [chartedEntries, setChartedEntries] = useState([]);
   const [apiArticles, setApiArticles] = useState([])
 
 
-//COMES FROM ARTICLE API
-  const apiArticleFetch =(apiArticles) =>{
-  setApiArticles(apiArticles)
-  console.log("MAde it As searchable Article",apiArticles) 
+  //COMES FROM ARTICLE API
+  const apiArticleFetch = (apiArticles) => {
+    setApiArticles(apiArticles)
+    console.log("MAde it As searchable Article", apiArticles)
   }
-  
-  const chartEntries = (chartedEntries) =>{
+
+  const chartEntries = (chartedEntries) => {
     setChartedEntries(searchEntries)
     console.log(chartedEntries)
   }
 
-//SEARCH ENTRIES FROM SEARCH BAR
-  const searchArticles = (searchEntries) =>{
-  setSearchEntries(searchEntries)
-  console.log("MADE IT TO APP PAGE SEARCH ENTIRES!",searchEntries)
+  //SEARCH ENTRIES FROM SEARCH BAR
+  const searchArticles = (searchEntries) => {
+    setSearchEntries(searchEntries)
+    console.log("MADE IT TO APP PAGE SEARCH ENTIRES!", searchEntries)
   }
-  
+
   // const chartsEntries = (chartedEntries) =>{
   // setChartedEntries(searchEntries)
   // console.log("Charts",chartedEntries)
   // }
-//HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
-  
+  //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
 
-// const searchingEntries = (searchableEntries) => {
-//   setSearchableEntries(searchableEntries)
-//   } 
- 
-// const apiSearches = (searchableEntries, apiArticles) => {
-//   setSearchableEntries(searchableEntries, apiArticles)
-//   } 
- 
-  
+
+  // const searchingEntries = (searchableEntries) => {
+  //   setSearchableEntries(searchableEntries)
+  //   } 
+
+  // const apiSearches = (searchableEntries, apiArticles) => {
+  //   setSearchableEntries(searchableEntries, apiArticles)
+  //   } 
+
+
 
   return (
     <div>
@@ -79,22 +79,50 @@ function App() {
             <PrivateRoute>
               <HomePage />
               <WatchListContextProvider>
-              <AssetList />
+                <AssetList />
               </WatchListContextProvider>
-              <div>
-              <SearchBar searchArticles={searchArticles} />
-              <RelatedArticles searchingEntries={searchEntries} />
-              <SaveArticles article={searchEntries} />   
-              <RelatedCharts chartedEntries={searchEntries}/>
-              </div>
-              <ArticleList apiArticleFetch={apiArticleFetch} />
+              <br />
 
-      
-        
+              <div className="container-1">
+                <div className="box-1">
+                  <SaveArticles article={searchEntries} />
+                </div>
+
+              </div>
+              <div className="container-3">
+
+                <div className="box-3">
+                  <SearchBar searchArticles={searchArticles} />
+                  <RelatedCharts chartedEntries={searchEntries} />
+                </div>
+                <div className="box-4">
+                </div>
+
+              </div>
+              <div className="container-2" >
+                <div className="box-2"  >
+                  <ArticleList apiArticleFetch={apiArticleFetch} />
+                </div>
+                <div className="box-3">
+                  <RelatedArticles searchingEntries={searchEntries} />
+                </div>
+
+                {/* <div className="container-3">
+                  </div> */}
+
+                {/* <div className="box-4">
+                    </div> */}
+
+
+
+              </div>
+
+
+
               {/* <ApiSearcher  searchableEntries={apiSearches} apiArticles={apiSearches}   /> */}
 
-          
-       
+
+
             </PrivateRoute>
           }
         />

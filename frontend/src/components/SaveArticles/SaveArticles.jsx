@@ -33,9 +33,9 @@ function goodDay(){ var goodEvent = goodEvent.bubbles}
 function badDay(){ var badEvent = badEvent.bubbles}
 
     return ( 
-        <div className='container-1' key={props.index}>
+        <div className='forms' key={props.index}>
             
-        <form className='box-2' onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
             
 
            <label>Title</label>
@@ -56,10 +56,13 @@ function badDay(){ var badEvent = badEvent.bubbles}
                  
             <div>
                 Save Article as "Good" or "Bad" for investments?
-            <button onClick={goodDay}>Good</button>
+       
+                <button  onClick={goodDay}>Good</button>
+         
             <button onClick={badDay}>Bad</button>
                 </div>
         </form>
+                {/* <button style="font-size:24px">Button <i class="fa fa-thumbs-up"></i></button> */}
         </div>
      );
 }

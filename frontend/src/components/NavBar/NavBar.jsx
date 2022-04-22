@@ -14,6 +14,9 @@ const Navbar = () => {
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             <b>Welcome to World Asset News</b>
           </Link>
+          {/* <Link to="./components/RelatedArticles/RaletedArticles" style={{ textDecoration: "none", color: "white" }}>
+            <b>SAved Articles</b>
+          </Link> */}
         </li>
         <li>
           {user ? (
