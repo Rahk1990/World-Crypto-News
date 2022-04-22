@@ -9,6 +9,9 @@ const SaveArticles = (props) => {
     const [title, setTitle] = useState(' ');
     const [urls, setUrls] = useState(' ');
     const [comment, setComment] = useState(' ');
+    const [good, setGood] = useState( );
+    const [bad, setBad] = useState( );
+    
 
 
     async function handleSubmit(event){
@@ -24,13 +27,17 @@ const SaveArticles = (props) => {
         urls:urls,
         // urls:urls, TO PULL AUTO
         comment:comment,
+
+        good:good,
+
+        bad:bad
     }
     await axios.post("http://127.0.0.1:8000/api/articles/", newEntry)
     // props.fetchArticleData();
     console.log(comment)
 }
-function goodDay(){ var goodEvent = goodEvent.bubbles}
-function badDay(){ var badEvent = badEvent.bubbles}
+function goodDay(){ setGood(1)}
+function badDay(){ setBad(1)}
 
     return ( 
         <div className='forms' key={props.index}>

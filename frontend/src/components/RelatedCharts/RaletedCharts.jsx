@@ -3,49 +3,46 @@ import { Chart } from "react-google-charts";
 // import axios from 'axios';
 const RelatedCharts = ({ chartedEntries }) => {
 
-    const [goodCounts, setGoodCounts] = useState();// Counter for Good counts
-    const [badCounts, setBadCounts] = useState(); // Counter for Bad counts
-    const [counter, setCounter] = useState(0)
+    const [goodCounts, setGoodCounts] = useState(0);// Counter for Good counts
+    const [badCounts, setBadCounts] = useState(0); // Counter for Bad counts
+
     // console.log("Made it RELATED",chartedEntries)
 
 
     const goodDayCount = () => {
 
-        let counts = 0;
-        chartedEntries.forEach((entries) => { counts += entries.good });
+        let counter = 0;
+        chartedEntries.forEach((entries) => { counter += entries.good });
 
         console.log("counted good", goodCounts)
 
 
-        console.log(`There are ${counts} good days`)
-        setCounter(counts)
+        console.log(`There are ${counter} good days`)
+        setGoodCounts(counter);// adds 1 to counter for "Good"
         return true;
     };
-
     const badDayCount = () => {
 
-        let counts = 0;
-        chartedEntries.forEach((entries) => { counts += entries.bad });
-        
+        let counter = 0;
+        chartedEntries.forEach((entries) => { counter += entries.bad });
+
         console.log("counted good", badCounts)
-        
-        
-        console.log(`There are ${counts} Bad days`)
-        setCounter(counts)
+
+
+        console.log(`There are ${counter} Bad days`)
+        setBadCounts(counter);// adds 1 to counter for "Good"
         return true;
     };
-    
+
     function handleSubmit(e) {
-        
+
         goodDayCount();
         badDayCount();
         e.preventDefault(e);
     }
     useEffect(() => {
         goodDayCount();
-        setGoodCounts(counter);// adds 1 to counter for "Good"
         badDayCount();
-        setBadCounts(counter);// adds 1 to counter for "Good"
     }, []);
 
     const data = [

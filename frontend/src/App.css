@@ -84,6 +84,12 @@ image:hover {
 
 .container-3 {
   display: flex;
+  width: 50%;
+}
+.container-4 {
+  display: flex;
+  width: fit-content;
+
 }
 
 .box-1 div,
@@ -143,6 +149,7 @@ image:hover {
   display: flex;
 
 
+
 }
 
 
@@ -153,6 +160,8 @@ image:hover {
   border-radius: 25px;
   box-sizing: inherit;
   max-height: fit-content;
+  flex :2;
+
 }
 
 .box-4 {
@@ -161,6 +170,8 @@ image:hover {
   border-radius: 25px;
   box-sizing: inherit;
   max-height: auto;
+
+
 }
 
 .articles {

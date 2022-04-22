@@ -93,11 +93,13 @@ function App() {
 
                 <div className="box-3">
                   <SearchBar searchArticles={searchArticles} />
-                  <RelatedCharts chartedEntries={searchEntries} />
-                </div>
-                <div className="box-4">
                 </div>
 
+              </div>
+              <div className="container-4">
+                <div className="box-4">
+                  <RelatedCharts chartedEntries={searchEntries} />
+                </div>
               </div>
               <div className="container-2" >
                 <div className="box-2"  >
