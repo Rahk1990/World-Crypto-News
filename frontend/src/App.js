@@ -97,6 +97,7 @@ function App() {
                   <RelatedCharts chartedEntries={searchEntries} />
                 </div>
               </div>
+                  <h2 className="container">Articles</h2>
               <div className="container-2" >
                 <div className="box-2"  >
                   <ArticleList apiArticleFetch={apiArticleFetch} />

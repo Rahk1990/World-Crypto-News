@@ -7,7 +7,7 @@ const RelatedArticles = ({ searchingEntries }) => {
     return (
 
         <div >
-            <h2 >Relative Articles</h2>
+            <h2 className='articles'>Relative Articles</h2>
 
             {searchingEntries.map((article) => {
 
@@ -17,12 +17,12 @@ const RelatedArticles = ({ searchingEntries }) => {
                         <div >
 
                             {/* <td>{article.index }</td> */}
-                            <h3>{article.id}</h3>
-                            <h3>{article.title}</h3>
-                            <h3>{article.author}</h3>
-                            <h3>{article.urls}</h3>
-                            <h3>{article.comment}</h3>
-                            <h3>{article.good}</h3>
+                            <h3>Article : <h6>{article.id}</h6></h3>
+                            <h3>Title :<h6>{article.title}</h6></h3>
+                            <h3>Author :<h6>{article.author}</h6></h3>
+                            <h3>Urls :<h6></h6>{article.urls}</h3>
+                            <h3>Comment:<h6>{article.comment}</h6></h3>
+                           
 
 
                         </div>

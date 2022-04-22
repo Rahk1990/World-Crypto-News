@@ -30,7 +30,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1>News and Asset Page {user.username}!</h1>
-      <Link to='/searchpage' onClick={()=> setIsToggled(!isToggled)}>Search Articles</Link>
+      <Link className="background" to='/searchpage' onClick={()=> setIsToggled(!isToggled)}>Refresh Articles</Link>
       {/* {cars &&
         cars.map((car) => (
           <p key={car.id}>

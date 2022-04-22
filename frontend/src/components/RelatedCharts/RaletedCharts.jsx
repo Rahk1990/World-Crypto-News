@@ -71,6 +71,7 @@ const RelatedCharts = ({ chartedEntries }) => {
             width={"100%"}
             height={"400px"}
             />}
+            <p className='container'>Use Chart to keep track of "Good" or "Bad" investmnet Articles!</p>
         </div>
     );
 }
