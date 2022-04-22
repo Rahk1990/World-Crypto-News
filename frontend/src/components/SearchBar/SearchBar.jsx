@@ -1,17 +1,16 @@
 import React, { useState , useEffect } from 'react';
 import axios from 'axios';
-import RelatedArticles from '../RelatedArticles/RaletedArticles';
 
 
 const SearchBar = (props) => {
 
-    const [searchEntries, setSearchEntries] = useState('');
+    // const [searchEntries, setSearchEntries] = useState('');
     const [searchedEntries, setSearchedEntries] = useState([]);
  
     
+
     function handleSubmit(e){
         getRelatedArticles();
-        
         
         e.preventDefault();
         
@@ -24,6 +23,7 @@ const SearchBar = (props) => {
         console.log("returned from search",searchedEntries)
         searchableEntries(searchedEntries);
     }
+
     function searchableEntries(searchedEntries) {
         props.searchArticles(searchedEntries)
     } 
@@ -37,13 +37,10 @@ const SearchBar = (props) => {
     return (
         <div >
             <form onSubmit={handleSubmit}>
-                {/* <input value={searchEntries} onChange={(e) => setSearchEntries(e.target.value)} type='text' placeholder='Search...'></input> */}
-
                 <button type='submit'>Get Related </button>
             </form>
 
 
-            {/* <RelatedArticles searchEntries={searchEntries} /> */}
         </div>
     )
     

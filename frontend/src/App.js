@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -33,6 +34,7 @@ function App() {
   const [searchEntries, setSearchEntries] = useState([]);
   const [chartedEntries, setChartedEntries] = useState([]);
   const [apiArticles, setApiArticles] = useState([])
+ 
 
 
   //COMES FROM ARTICLE API
@@ -52,10 +54,7 @@ function App() {
     console.log("MADE IT TO APP PAGE SEARCH ENTIRES!", searchEntries)
   }
 
-  // const chartsEntries = (chartedEntries) =>{
-  // setChartedEntries(searchEntries)
-  // console.log("Charts",chartedEntries)
-  // }
+
   //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
 
 
@@ -63,9 +62,6 @@ function App() {
   //   setSearchableEntries(searchableEntries)
   //   } 
 
-  // const apiSearches = (searchableEntries, apiArticles) => {
-  //   setSearchableEntries(searchableEntries, apiArticles)
-  //   } 
 
 
 
@@ -96,8 +92,8 @@ function App() {
                 </div>
 
               </div>
-              <div className="container-4">
-                <div className="box-4">
+              <div className="box-4">
+                <div >
                   <RelatedCharts chartedEntries={searchEntries} />
                 </div>
               </div>
@@ -130,6 +126,7 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/searchpage" element={<PrivateRoute><SearchPage /></PrivateRoute>} />
       </Routes>
       <Footer />
     </div>

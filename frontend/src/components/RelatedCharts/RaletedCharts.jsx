@@ -5,7 +5,7 @@ const RelatedCharts = ({ chartedEntries }) => {
 
     const [goodCounts, setGoodCounts] = useState(0);// Counter for Good counts
     const [badCounts, setBadCounts] = useState(0); // Counter for Bad counts
-
+    const [isToggled, setIsToggled] = useState(false)
     // console.log("Made it RELATED",chartedEntries)
 
 
@@ -61,16 +61,16 @@ const RelatedCharts = ({ chartedEntries }) => {
     return (
         <div >
             <form  onSubmit={handleSubmit} >
-                <button className='button' >Get Bias Chart</button>
+                <button className='button' onClick={()=> setIsToggled(!isToggled)} >Get Bias Chart</button>
             </form>
-
+            {isToggled &&
             <Chart
-                chartType="PieChart"
-                data={data}
-                options={options}
-                width={"100%"}
-                height={"400px"}
-            />
+            chartType="PieChart"
+            data={data}
+            options={options}
+            width={"100%"}
+            height={"400px"}
+            />}
         </div>
     );
 }
