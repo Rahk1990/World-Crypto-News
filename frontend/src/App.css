@@ -37,7 +37,7 @@ image:hover {
   cursor: pointer;
   color: white;
   background-color: steelblue;
-
+  
 }
 
 .container {
@@ -45,6 +45,7 @@ image:hover {
   max-width: 600px;
   overflow: auto;
   text-align: center;
+  color: white;
 }
 
 .form {
@@ -70,7 +71,6 @@ image:hover {
   flex-direction: column;
   flex-shrink: 1px;
   cursor: pointer;
-  color: white;
   background-color: rgb(19, 106, 27);
 }
 
@@ -89,13 +89,15 @@ image:hover {
 .container-4 {
   display: flex;
   width: fit-content;
-
+  
 }
 
+.box-4
 .box-1 div,
 .container-1 div,
 .container-2,
 .box-2 div {
+  color: white;
 
   border: 1px rgb(6, 5, 5) solid;
   padding: 10px;
@@ -148,8 +150,6 @@ image:hover {
   max-height: fit-content;
   display: flex;
 
-
-
 }
 
 
@@ -165,11 +165,8 @@ image:hover {
 }
 
 .box-4 {
-  display: flex;
-  padding: 1px 4px;
-  border-radius: 25px;
-  box-sizing: inherit;
-  max-height: auto;
+padding: 1px 4px;
+  width:50%
 
 
 }
@@ -181,7 +178,7 @@ image:hover {
   grid-template-areas: "hd hd"
     "sidebar main"
     "footer footer";
-  background-color: antiquewhite;
+  background-color: rgba(163, 103, 24, 0.678);
   /* padding: 1px 4px;
   border-radius: 25px; */
 }
@@ -225,3 +222,43 @@ image:hover {
   background-color: dodgerblue;
   color: white;
 }
+
+body {
+  background-image: url("../public/banner2.jpg");
+}
+/* frontend\public\banner2.jpg */
+ul {
+  list-style: none;
+}
+
+.assetlist-image {
+  width: 150px;
+  scroll-behavior: smooth;
+}
+
+.assetlist-item {
+  display: flex;
+  color: white;
+}
+
+.assetsummary {
+  border-color: white !important;
+  border-style: outset !important;
+}
+
+.asset-data-category {
+  font-size: 10px;
+}
+
+.delete-icon {
+  display: none;
+  position: absolute;
+  right: 6px;
+}
+
+.asset:hover .delete-icon {
+  display: block;
+}
+/* .background{
+  background-image: ;
+} */
