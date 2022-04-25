@@ -74,8 +74,10 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
+
+              {/* ADD POSSIBLE "ON-CLICK" TO RETURN ARTICLES RETLATED TO TOKEN THATS CLICKED */}
               <WatchListContextProvider>
-                <AssetList />
+                <AssetList /> 
               </WatchListContextProvider>
               <br />
 
