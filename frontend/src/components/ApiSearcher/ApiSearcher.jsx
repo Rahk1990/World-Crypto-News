@@ -1,34 +1,50 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
-function ApiSeacher ({searchableEntries, apiArticles}){
+function ApiSeacher ({searchBarResults}){
   
-  const [searches, setSearches] = useState([])
-  const [articles, setArticles] = useState([])
-
-  let search = searchableEntries.map(el => el)
-  setSearches(search)
-  console.log(searches)
-
-  let article = apiArticles.map(el => el.slug)
-  setArticles(article)
-  console.log(articles)
+  //   const [searches, setSearches] = useState([])
+  //   const [articles, setArticles] = useState([])
   
   
- searchableEntries.filter((searches,article) => {
-      if(searches.name.toLowerCase().includes(searches.toLowerCase()) === apiArticles.name.toLowerCase().includes(articles.toLowerCase())){
+  
+  // const search = searchEntries.map(el => el)
+  // setSearches(search)
+  // console.log(searches)
+  
+  // let article = apiArticles.filter(el => el.title)
+  // setArticles(article)
+  // console.log(articles)
+  
+  console.log(`Search Bar Entry is ${searchBarResults}`)
+ 
+
+// function searchEntries({searchEntries}){
+//   let articles = searchEntries.map(el=> el)
+//   console.log(`Search Bar Articles is ${articles}`)
+ 
+// }
+
+  // useEffect(() => {
+  //   searchArticle()
+  //   searchEntries()
+  // }, []);
+  
+  // searchBarEntries.filter((searches,apiArticles) => {
+  //      (searches.name.toLowerCase().includes(searches.toLowerCase()) === apiArticles.name.toLowerCase().includes(apiArticles.toLowerCase()))
           
       return(
         
-        <div ><h3>{article.slug}</h3></div>,
+        <div >{searchBarResults.title}</div>,
         // <img src={article.parsely.meta.image.url} alt="" />
-        <div>{searches}</div>
+        <div>searches</div>
        
       );          
     }
-    else return false (<h4>No Articles</h4>);
+    // else return (<h4>No Articles</h4>);
     
-});
-}
+
+// );
+// }
 
 export default ApiSeacher;

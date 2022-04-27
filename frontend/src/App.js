@@ -1,7 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -19,10 +19,12 @@ import SaveArticles from "./components/SaveArticles/SaveArticles"
 // import ApiSearcher from "./components/ApiSearcher/ApiSearcher";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
-import SearchBar from "./components/SearchBar/SearchBar";
+import GetUserArticles from "./components/SearchBar/SearchBar";
 import AssetList from "./components/AssetList/AssetList";
 import RelatedArticles from "./components/RelatedArticles/RaletedArticles";
 import RelatedCharts from "./components/RelatedCharts/RaletedCharts";
+import ApiSeacher from "./components/ApiSearcher/ApiSearcher";
+import SearchRelatedBar from "./components/SearchRelatedBar/SearchRelatedBar";
 
 
 
@@ -32,9 +34,11 @@ import RelatedCharts from "./components/RelatedCharts/RaletedCharts";
 function App() {
 
   const [searchEntries, setSearchEntries] = useState([]);
+  const [searchBarEntries, setSearchBarEntries] = useState([]);
+  const [searchBarResults, setSearchBarResults] = useState([]);
   const [chartedEntries, setChartedEntries] = useState([]);
   const [apiArticles, setApiArticles] = useState([])
- 
+
 
 
   //COMES FROM ARTICLE API
@@ -53,17 +57,40 @@ function App() {
     setSearchEntries(searchEntries)
     console.log("MADE IT TO APP PAGE SEARCH ENTIRES!", searchEntries)
   }
-
-
+  
+  
   //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
+  // BE MORE DISCRIPTIVE WITH NAMING CONVENTION
+  const searchBarResult = (thingToSeachBy) => {
+    console.log('Ready for search', searchEntries)
+    let searchMatch = searchEntries.filter((searches) =>{
+      return searches.title.includes(thingToSeachBy)
+    })
+    console.log("SEARCH MATCH",searchMatch)
+    
+    // searches.title.toLowerCase())) 
+    // (searches === searchEntries.title)
+    // const searchResults = searchMatch.map((el) => (el.title))
+    // console.log('AFTER SEARCHRESULTS',searchResults)
+    // const matches = searchResults.map((el) => el === searchBarEntries)
+    // if (searchResults === searchBarEntries){
+      //    console.log("MATCHES",matches)
+      //setSearchBarResults(searchMatch)
+    } 
+    //  }
 
+  // }
+  // const sendSearch = (searchBarEntries) => {
+  //   setSearchBarEntries(searchBarEntries)
 
-  // const searchingEntries = (searchableEntries) => {
-  //   setSearchableEntries(searchableEntries)
-  //   } 
-
-
-
+  //   console.log('My searches here', searchBarEntries)
+  // }
+  
+  
+  useEffect(() => {
+    //searchBarResult(searchBarEntries);
+    
+  }, []);
 
   return (
     <div>
@@ -77,7 +104,7 @@ function App() {
 
               {/* ADD POSSIBLE "ON-CLICK" TO RETURN ARTICLES RETLATED TO TOKEN THATS CLICKED */}
               <WatchListContextProvider>
-                <AssetList /> 
+                <AssetList />
               </WatchListContextProvider>
               <br />
 
@@ -86,20 +113,24 @@ function App() {
                   <SaveArticles article={searchEntries} />
                 </div>
 
+                <div>
+                  <ApiSeacher searchBarResults={searchBarResults} />
+                </div>
               </div>
               <div className="container-3">
 
                 <div className="box-3">
-                  <SearchBar searchArticles={searchArticles} />
+                  <GetUserArticles searchArticles={searchArticles} />
                 </div>
 
               </div>
               <div className="box-4">
                 <div >
+                  <SearchRelatedBar sendSearch={searchBarResult} />
                   <RelatedCharts chartedEntries={searchEntries} />
                 </div>
               </div>
-                  <h2 className="container">Articles</h2>
+              <h2 className="container">Articles</h2>
               <div className="container-2" >
                 <div className="box-2"  >
                   <ArticleList apiArticleFetch={apiArticleFetch} />

@@ -2,7 +2,7 @@ import React, { useState , useEffect } from 'react';
 import axios from 'axios';
 
 
-const SearchBar = (props) => {
+const GetUserArticles = (props) => {
 
     // const [searchEntries, setSearchEntries] = useState('');
     const [searchedEntries, setSearchedEntries] = useState([]);
@@ -46,4 +46,4 @@ const SearchBar = (props) => {
     
 }
 
-export default SearchBar;
+export default GetUserArticles;
