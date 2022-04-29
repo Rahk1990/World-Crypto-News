@@ -20,11 +20,9 @@ const SearchRelatedBar = (props) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
+                <button type='submit'>Search </button>
                 <input value={searchEntries} onChange={(e) => setSearchEntries(e.target.value)} type='text' placeholder='Search...'></input>
 
-                <button type='submit'>Search </button>
- 
-                
             </form>
         </div>
     )

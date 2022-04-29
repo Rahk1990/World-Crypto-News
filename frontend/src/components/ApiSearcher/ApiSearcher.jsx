@@ -37,7 +37,7 @@ function ApiSeacher ({searchBarResults}){
         
         <div >{searchBarResults.title}</div>,
         // <img src={article.parsely.meta.image.url} alt="" />
-        <div>searches</div>
+        <div></div>
        
       );          
     }

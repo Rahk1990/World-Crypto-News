@@ -47,6 +47,7 @@ const ArticleList = (props) => {
   return (
 
     <div>
+      <h2 className='container-1'>New Articles</h2>
 
       {article.map((article) => {
 
@@ -55,12 +56,12 @@ const ArticleList = (props) => {
 
             <br />
 
-            <div>
+            <div className='margin'>
               <img className='image' src={article.parsely.meta.image.url} alt={article.parsely.meta.publisher.logo.url} />
 
               Title:<h3>{article.parsely.meta.headline}</h3></div>
-            <div>URL:<h3>{article.canonical_url}</h3></div>
-            <div>Summary:<h3>{article.excerpt.rendered}</h3></div>
+            <div className='margin'>URL:<h3>{article.canonical_url}</h3></div>
+            <div className='margin'>Summary:<h3>{article.excerpt.rendered}</h3></div>
 
           </div>
 

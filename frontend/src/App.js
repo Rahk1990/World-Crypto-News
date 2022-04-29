@@ -14,7 +14,8 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import { WatchListContextProvider } from "./context/watchList";
 import ArticleList from "./components/ArticleList/ArticleList";
-import SaveArticles from "./components/SaveArticles/SaveArticles"
+import SaveArticles from "./components/SaveArticles/SaveArticles";
+import DisplaySearches from "./components/DisplaySearches/DisplaySearches";
 
 // import ApiSearcher from "./components/ApiSearcher/ApiSearcher";
 // Util Imports
@@ -57,39 +58,28 @@ function App() {
     setSearchEntries(searchEntries)
     console.log("MADE IT TO APP PAGE SEARCH ENTIRES!", searchEntries)
   }
-  
-  
+
+
   //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
   // BE MORE DISCRIPTIVE WITH NAMING CONVENTION
   const searchBarResult = (thingToSeachBy) => {
     console.log('Ready for search', searchEntries)
-    let searchMatch = searchEntries.filter((searches) =>{
+    let searchMatch = searchEntries.filter((searches) => {
       return searches.title.includes(thingToSeachBy)
     })
-    console.log("SEARCH MATCH",searchMatch)
-    
-    // searches.title.toLowerCase())) 
-    // (searches === searchEntries.title)
-    // const searchResults = searchMatch.map((el) => (el.title))
-    // console.log('AFTER SEARCHRESULTS',searchResults)
-    // const matches = searchResults.map((el) => el === searchBarEntries)
-    // if (searchResults === searchBarEntries){
-      //    console.log("MATCHES",matches)
-      //setSearchBarResults(searchMatch)
-    } 
-    //  }
+    console.log("SEARCH MATCH", searchMatch)
 
-  // }
-  // const sendSearch = (searchBarEntries) => {
-  //   setSearchBarEntries(searchBarEntries)
 
-  //   console.log('My searches here', searchBarEntries)
-  // }
-  
-  
+    setSearchBarResults(searchMatch)
+  }
+
+
+
+
+
   useEffect(() => {
     //searchBarResult(searchBarEntries);
-    
+
   }, []);
 
   return (
@@ -107,40 +97,47 @@ function App() {
                 <AssetList />
               </WatchListContextProvider>
               <br />
+              {/* 
+                <div className="margin">
+                    </div> */}
+              <div className="container-2">
 
+
+                <div >
+                  <div className="box-1">
+                    <GetUserArticles searchArticles={searchArticles} />
+                    <SearchRelatedBar sendSearch={searchBarResult} />
+                  </div>
+                  <div className="box-2">
+                    <RelatedCharts chartedEntries={searchEntries} />
+                  </div>
+                </div>
+
+              </div>
               <div className="container-1">
                 <div className="box-1">
                   <SaveArticles article={searchEntries} />
                 </div>
-
+                {/* 
                 <div>
                   <ApiSeacher searchBarResults={searchBarResults} />
-                </div>
-              </div>
-              <div className="container-3">
-
-                <div className="box-3">
-                  <GetUserArticles searchArticles={searchArticles} />
-                </div>
-
-              </div>
-              <div className="box-4">
-                <div >
-                  <SearchRelatedBar sendSearch={searchBarResult} />
-                  <RelatedCharts chartedEntries={searchEntries} />
-                </div>
+                </div> */}
               </div>
               <h2 className="container">Articles</h2>
-              <div className="container-2" >
-                <div className="box-2"  >
-                  <ArticleList apiArticleFetch={apiArticleFetch} />
-                </div>
-                <div className="box-3">
-                  <RelatedArticles searchingEntries={searchEntries} />
+              <div className="container-3" >
+
+                <div className="articleBox">
+                  <div className="box-2"  >
+                    <ArticleList apiArticleFetch={apiArticleFetch} />
+                  </div>
+                  <div className="box-3">
+                    <RelatedArticles searchingEntries={searchEntries} />
+                  </div>
+                  <div className="box-4">
+                    <DisplaySearches searchEntries={searchBarResults} />
+                  </div>
                 </div>
 
-                {/* <div className="container-3">
-                  </div> */}
 
                 {/* <div className="box-4">
                     </div> */}
