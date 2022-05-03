@@ -7,7 +7,7 @@ const RelatedArticles = ({ searchEntries }) => {
     return (
 
         <div  >
-            <h2 className='container-1'>Saved Articles</h2>
+            <h2 className='container-1'>My Saved Articles</h2>
 
             {searchEntries.map((article) => {
 
