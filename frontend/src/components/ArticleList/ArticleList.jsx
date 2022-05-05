@@ -55,7 +55,7 @@ const ArticleList = (props) => {
           <div key={article.index} >
 
             <br />
-
+{/* ADD hyperlink to this list */}
             <div className='margin'>
               <img className='image' src={article.parsely.meta.image.url} alt={article.parsely.meta.publisher.logo.url} />
 
