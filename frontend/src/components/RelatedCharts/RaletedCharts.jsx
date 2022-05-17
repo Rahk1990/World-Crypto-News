@@ -71,7 +71,7 @@ const RelatedCharts = ({ chartedEntries }) => {
             width={"100%"}
             height={"400px"}
             />}
-            <p className='container'>CLick "Get Related", Use Chart to keep track of "Good" or "Bad" investment Articles!</p>
+            <p className='container'>Click "Get Related", Use Chart to keep track of "Good day for" or "Bad day for" investments!</p>
         </div>
     );
 }
