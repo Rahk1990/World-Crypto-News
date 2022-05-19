@@ -6,7 +6,6 @@ const RelatedCharts = ({ chartedEntries }) => {
     const [goodCounts, setGoodCounts] = useState(0);// Counter for Good counts
     const [badCounts, setBadCounts] = useState(0); // Counter for Bad counts
     const [isToggled, setIsToggled] = useState(false)
-    // console.log("Made it RELATED",chartedEntries)
 
 
     const goodDayCount = () => {
@@ -60,17 +59,17 @@ const RelatedCharts = ({ chartedEntries }) => {
 
     return (
         <div >
-            <form  onSubmit={handleSubmit} >
-                <button className='button' onClick={()=> setIsToggled(!isToggled)} >Get Bias Chart</button>
+            <form onSubmit={handleSubmit} >
+                <button className='button' onClick={() => setIsToggled(!isToggled)} >Get Bias Chart</button>
             </form>
             {isToggled &&
-            <Chart
-            chartType="PieChart"
-            data={data}
-            options={options}
-            width={"100%"}
-            height={"400px"}
-            />}
+                <Chart
+                    chartType="PieChart"
+                    data={data}
+                    options={options}
+                    width={"100%"}
+                    height={"400px"}
+                />}
             <p className='container'>Click "Get Related", Use Chart to keep track of "Good day for" or "Bad day for" investments!</p>
         </div>
     );

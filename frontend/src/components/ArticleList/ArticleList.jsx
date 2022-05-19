@@ -1,11 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react';
-// import ArticlesContext from '../Articles/ArticlesContext'
-// import CoinGeeko from '../apis/CoinGeeko'
 
-// For setting the table to hold the tokens
-
-// id:null, symbol:null, name:" ", block_time_in_minutes:" ", image:" ", market_data:" ", last_updated:" ", localization:""
 const ArticleList = (props) => {
 
   const [article, setArticles] = useState([]);
@@ -55,7 +50,7 @@ const ArticleList = (props) => {
           <div key={article.index} >
 
             <br />
-{/* ADD hyperlink to this list */}
+            {/* ADD hyperlink to this list */}
             <div className='margin'>
               <img className='image' src={article.parsely.meta.image.url} alt={article.parsely.meta.publisher.logo.url} />
 
