@@ -1,37 +1,36 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
 const GetUserArticles = (props) => {
 
-    // const [searchEntries, setSearchEntries] = useState('');
     const [searchedEntries, setSearchedEntries] = useState([]);
- 
-    
 
-    function handleSubmit(e){
+
+
+    function handleSubmit(e) {
         getRelatedArticles();
-        
+
         e.preventDefault();
-        
+
     }
-    
-    async function getRelatedArticles(){
+
+    async function getRelatedArticles() {
         let response = await axios.get('http://127.0.0.1:8000/api/articles/');
         setSearchedEntries(response.data);
         console.log(response.data);
-        console.log("returned from search",searchedEntries)
+        console.log("returned from search", searchedEntries)
         searchableEntries(searchedEntries);
     }
 
     function searchableEntries(searchedEntries) {
         props.searchArticles(searchedEntries)
-    } 
-    
+    }
+
     useEffect(() => {
         getRelatedArticles()
-    },[]);
-    
+    }, []);
+
 
 
     return (
@@ -43,7 +42,7 @@ const GetUserArticles = (props) => {
 
         </div>
     )
-    
+
 }
 
 export default GetUserArticles;
