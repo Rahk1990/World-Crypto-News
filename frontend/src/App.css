@@ -101,6 +101,9 @@ image:hover {
 
 }
 
+.assetBox{
+  padding: 15px;
+}
 .articleBox {
   display: grid;
 

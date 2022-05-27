@@ -47,7 +47,7 @@ function App() {
     setApiArticles(apiArticles)
     console.log("MAde it As searchable Article", apiArticles)
   }
-
+  //Entries to be Charted
   const chartEntries = (chartedEntries) => {
     setChartedEntries(searchEntries)
     console.log(chartedEntries)
@@ -60,6 +60,7 @@ function App() {
   }
 
 
+  
   //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
   // BE MORE DISCRIPTIVE WITH NAMING CONVENTION
   const searchBarResult = (thingToSeachBy) => {
@@ -68,7 +69,6 @@ function App() {
       return searches.title.includes(thingToSeachBy)
     })
     console.log("SEARCH MATCH", searchMatch)
-
 
     setSearchBarResults(searchMatch)
   }
@@ -93,9 +93,12 @@ function App() {
               <HomePage />
 
               {/* ADD POSSIBLE "ON-CLICK" TO RETURN ARTICLES RETLATED TO TOKEN THATS CLICKED */}
-              <WatchListContextProvider>
-                <AssetList />
-              </WatchListContextProvider>
+              <div className="assetBox">
+
+                <WatchListContextProvider>
+                  <AssetList />
+                </WatchListContextProvider>
+              </div>
               <br />
               {/* 
                 <div className="margin">
