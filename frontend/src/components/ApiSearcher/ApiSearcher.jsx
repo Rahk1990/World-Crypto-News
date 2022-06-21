@@ -1,23 +1,23 @@
-import React from 'react';
+// import React from 'react';
 
 
-function ApiSeacher({ searchBarResults }) {
+// function ApiSeacher({ searchBarResults }) {
 
 
-  console.log(`Search Bar Entry is ${searchBarResults}`)
+//   console.log(`Search Bar Entry is ${searchBarResults}`)
 
 
-    (searches.name.toLowerCase().includes(searches.toLowerCase()) === apiArticles.name.toLowerCase().includes(apiArticles.toLowerCase()))
+//     (searches.name.toLowerCase().includes(searches.toLowerCase()) === apiArticles.name.toLowerCase().includes(apiArticles.toLowerCase()))
 
-  return (
+//   return (
 
-    <div >{searchBarResults.title}</div>,
-    // <img src={article.parsely.meta.image.url} alt="" />
-    <div></div>
+//     <div >{searchBarResults.title}</div>,
+//     // <img src={article.parsely.meta.image.url} alt="" />
+//     <div></div>
 
-  );
-}
+//   );
+// }
 
 
 
-export default ApiSeacher;
+// export default ApiSeacher;
