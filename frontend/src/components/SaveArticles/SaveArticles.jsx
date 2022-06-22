@@ -35,10 +35,16 @@ const SaveArticles = (props) => {
         await axios.post("http://127.0.0.1:8000/api/articles/", newEntry)
         // props.fetchArticleData();
         console.log(comment)
+        window.location.reload(false);
     }
-    function goodDay() { setGood(1) }
-    function badDay() { setBad(1) }
-
+    function goodDay() { 
+        setGood(1);
+        // window.location.reload(false);
+         }
+    function badDay() { 
+        setBad(1);
+    }
+    
     return (
         <div className='forms' key={props.index}>
 
