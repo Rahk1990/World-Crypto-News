@@ -35,10 +35,10 @@ import SearchRelatedBar from "./components/SearchRelatedBar/SearchRelatedBar";
 function App() {
 
   const [searchEntries, setSearchEntries] = useState([]);
-  // const [searchBarEntries, setSearchBarEntries] = useState([]);
+  const [searchBarEntries, setSearchBarEntries] = useState([]);
   const [searchBarResults, setSearchBarResults] = useState([]);
-  // const [chartedEntries, setChartedEntries] = useState([]);
-  // const [apiArticles, setApiArticles] = useState([])
+  const [chartedEntries, setChartedEntries] = useState([]);
+  const [apiArticles, setApiArticles] = useState([])
 
 
 
@@ -66,7 +66,7 @@ function App() {
   const searchBarResult = (thingToSeachBy) => {
     console.log('Ready for search', searchEntries)
     let searchMatch = searchEntries.filter((searches) => {
-      return searches.title.includes(thingToSeachBy)
+      return searches.title.toLowerCase().includes(thingToSeachBy)
     })
     console.log("SEARCH MATCH", searchMatch)
 
