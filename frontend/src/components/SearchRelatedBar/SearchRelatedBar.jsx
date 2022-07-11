@@ -6,14 +6,14 @@ const SearchRelatedBar = (props) => {
     const [searchEntries, setSearchEntries] = useState('')
 
 
-
-    function handleSubmit(e){
+    // handles fuction from search bar
+    function handleSubmit(e) {
         sendsSearch()
         e.preventDefault()
     }
-    
-    
-    function sendsSearch(){
+
+    // send search results from articles to app.js
+    function sendsSearch() {
         props.sendSearch(searchEntries)
     }
 
@@ -26,7 +26,7 @@ const SearchRelatedBar = (props) => {
             </form>
         </div>
     )
-    
+
 }
 
 export default SearchRelatedBar

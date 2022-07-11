@@ -24,7 +24,7 @@ import GetUserArticles from "./components/SearchBar/SearchBar";
 import AssetList from "./components/AssetList/AssetList";
 import RelatedArticles from "./components/RelatedArticles/RaletedArticles";
 import RelatedCharts from "./components/RelatedCharts/RaletedCharts";
-import ApiSeacher from "./components/ApiSearcher/ApiSearcher";
+// import ApiSeacher from "./components/ApiSearcher/ApiSearcher";
 import SearchRelatedBar from "./components/SearchRelatedBar/SearchRelatedBar";
 
 
@@ -35,10 +35,10 @@ import SearchRelatedBar from "./components/SearchRelatedBar/SearchRelatedBar";
 function App() {
 
   const [searchEntries, setSearchEntries] = useState([]);
-  const [searchBarEntries, setSearchBarEntries] = useState([]);
+  // const [searchBarEntries, setSearchBarEntries] = useState([]);
   const [searchBarResults, setSearchBarResults] = useState([]);
-  const [chartedEntries, setChartedEntries] = useState([]);
-  const [apiArticles, setApiArticles] = useState([])
+  // const [chartedEntries, setChartedEntries] = useState([]);
+  // const [apiArticles, setApiArticles] = useState([])
 
 
 
