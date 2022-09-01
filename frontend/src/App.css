@@ -87,7 +87,7 @@ image:hover {
   /* display: flex; */
   display: grid;
   color: aliceblue;
-  
+
 }
 
 .container-3 {
@@ -101,9 +101,10 @@ image:hover {
 
 }
 
-.assetBox{
+.assetBox {
   padding: 15px;
 }
+
 .articleBox {
   display: grid;
 
@@ -135,7 +136,7 @@ image:hover {
 
 
 
-.margin{
+.margin {
   background-image: url("../public/istockphoto-184921412-170667a.jpg");
   color: rgb(10, 8, 8);
   border: 1px rgb(240, 238, 238) solid;
@@ -145,7 +146,7 @@ image:hover {
 
 .box-1 {
   display: flex;
-flex:1;
+  flex: 1;
 }
 
 

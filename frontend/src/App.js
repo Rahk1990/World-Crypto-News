@@ -35,9 +35,9 @@ import SearchRelatedBar from "./components/SearchRelatedBar/SearchRelatedBar";
 function App() {
 
   const [searchEntries, setSearchEntries] = useState([]);
-  const [searchBarEntries, setSearchBarEntries] = useState([]);
+  // const [searchBarEntries, setSearchBarEntries] = useState([]);
   const [searchBarResults, setSearchBarResults] = useState([]);
-  const [chartedEntries, setChartedEntries] = useState([]);
+  // const [chartedEntries, setChartedEntries] = useState([]);
   const [apiArticles, setApiArticles] = useState([])
 
 
@@ -47,11 +47,12 @@ function App() {
     setApiArticles(apiArticles)
     console.log("MAde it As searchable Article", apiArticles)
   }
+
   //Entries to be Charted
-  const chartEntries = (chartedEntries) => {
-    setChartedEntries(searchEntries)
-    console.log(chartedEntries)
-  }
+  // const chartEntries = (chartedEntries) => {
+  //   setChartedEntries(searchEntries)
+  //   console.log(chartedEntries)
+  // }
 
   //SEARCH ENTRIES FROM SEARCH BAR
   const searchArticles = (searchEntries) => {
@@ -60,7 +61,7 @@ function App() {
   }
 
 
-  
+
   //HERE IS WHERE THE ARTICLE SHOULD CROSS REFERENCE WITH THE SEARCH
   // BE MORE DISCRIPTIVE WITH NAMING CONVENTION
   const searchBarResult = (thingToSeachBy) => {

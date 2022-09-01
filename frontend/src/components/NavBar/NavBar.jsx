@@ -13,6 +13,7 @@ const Navbar = () => {
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             <b>Welcome to Asset News</b>
+            
           </Link>
           {/* <Link to="./components/RelatedArticles/RaletedArticles" style={{ textDecoration: "none", color: "white" }}>
             <b>SAved Articles</b>

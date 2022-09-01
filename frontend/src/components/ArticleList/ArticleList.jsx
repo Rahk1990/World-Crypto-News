@@ -54,7 +54,7 @@ const ArticleList = (props) => {
             <div className='margin'>
               <img className='image' src={article.parsely.meta.image.url} alt={article.parsely.meta.publisher.logo.url} />
 
-              Title:<h3>{article.parsely.meta.headline}</h3></div>
+              Title:<li>{article.parsely.meta.headline}</li></div>
             <div className='margin'>URL:<h3>{article.canonical_url}</h3></div>
             <div className='margin'>Summary:<h3>{article.excerpt.rendered}</h3></div>
 
