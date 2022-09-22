@@ -72,7 +72,7 @@ image:hover {
 .image {
   display: flex;
   flex-direction: column;
-  flex-shrink: 1px;
+  width: 25%;
   cursor: pointer;
   background-color: rgb(19, 106, 27);
 }
@@ -142,6 +142,7 @@ image:hover {
   border: 1px rgb(240, 238, 238) solid;
   padding: 10px;
   border-radius: 25px;
+  display: flex;
 }
 
 .box-1 {
@@ -277,7 +278,7 @@ ul {
 }
 
 .footer {
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   font-size: 1.2rem;
   left: 0;

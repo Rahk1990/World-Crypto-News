@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const ArticleList = (props) => {
 
-  const [article, setArticles] = useState([]);
+  const [article, setArticle] = useState([]);
 
   const [apiArticle, setApiArticle] = useState([])
 
@@ -28,7 +28,7 @@ const ArticleList = (props) => {
 
       console.log("Data from News API AS RESPONSE data", response.data); // All article Returned here!
 
-      setArticles(response.data);
+      setArticle(response.data);
       setApiArticle(response.data);
 
     };
@@ -52,11 +52,14 @@ const ArticleList = (props) => {
             <br />
             {/* ADD hyperlink to this list */}
             <div className='margin'>
-              <img className='image' src={article.parsely.meta.image.url} alt={article.parsely.meta.publisher.logo.url} />
-
-              Title:<li>{article.parsely.meta.headline}</li></div>
+              <img className='image' src={article.jetpack_featured_media_url} alt={article.link} />
+              {/* <div className='margin'> Title: </div> */}
+              {article.title.rendered}
+              </div>
             <div className='margin'>URL:<h3>{article.canonical_url}</h3></div>
             <div className='margin'>Summary:<h3>{article.excerpt.rendered}</h3></div>
+            <button >Save Article</button>
+
 
           </div>
 
